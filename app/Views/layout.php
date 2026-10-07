@@ -164,6 +164,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
         <div class="container">
+            <a class="navbar-brand" href="<?= base_url('/') ?>">
                 <i class="fas fa-bolt text-warning me-2"></i>Puihaha Electric
             </a>
 
@@ -175,23 +176,23 @@
                 <ul class="navbar-nav ms-auto">
 
                     <li class="nav-item">
-                         ?>">Home</a>
+                        <a class="nav-link <?= uri_string() == '' ? 'active' : '' ?>" href="<?= base_url('/') ?>">Home</a>
                     </li>
 
                     <li class="nav-item">
-                         ?>">About</a>
+                        <a class="nav-link <?= uri_string() == 'about' ? 'active' : '' ?>" href="<?= base_url('about') ?>">About</a>
                     </li>
 
                     <li class="nav-item">
-                         ?>">Services</a>
+                        <a class="nav-link <?= uri_string() == 'services' ? 'active' : '' ?>" href="<?= base_url('services') ?>">Services</a>
                     </li>
 
                     <li class="nav-item">
-                         ?>">Contact</a>
+                        <a class="nav-link <?= uri_string() == 'contact' ? 'active' : '' ?>" href="<?= base_url('contact') ?>">Contact</a>
                     </li>
 
                     <li class="nav-item">
-                         ?>">Register</a>
+                        <a class="nav-link <?= uri_string() == 'register' ? 'active' : '' ?>" href="<?= base_url('register') ?>">Register</a>
                     </li>
 
                 </ul>
@@ -207,22 +208,54 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <!-- Footer content here (unchanged, properly indented) -->
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5><i class="fas fa-bolt me-2"></i>Puihaha Electric</h5>
+                    <p>Powering our communities with excellence, integrity, and innovation.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="<?= base_url('/') ?>">Home</a></li>
+                        <li><a href="<?= base_url('about') ?>">About</a></li>
+                        <li><a href="<?= base_url('services') ?>">Services</a></li>
+                        <li><a href="<?= base_url('contact') ?>">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <h5>Contact</h5>
+                    <p><i class="fas fa-envelope me-2"></i>info@puihahaelectric.com</p>
+                </div>
+            </div>
+
+            <hr class="border-secondary">
+            <p class="text-center mb-0">&copy; <?= date('Y') ?> Puihaha Electric. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-     ?>"></script>
 
     <script>
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
-                e.preventDefault();
+                const href = this.getAttribute('href');
+                if (href === '#') return;
 
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
 
