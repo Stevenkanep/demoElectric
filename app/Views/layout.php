@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?= isset($title) ? $title : 'Puihaha Electric' ?></title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #1e40af;
+            --secondary-color: #f59e0b;
+            --accent-color: #10b981;
+            --dark-color: #1f2937;
+            --light-color: #f8fafc;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: var(--primary-color) !important;
+        }
+
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: var(--secondary-color) !important;
+        }
+
+        .navbar-nav .nav-link.active {
+            color: var(--primary-color) !important;
+            font-weight: 600;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-color) 100%);
+            color: white;
+            padding: 100px 0;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #d97706;
+            border-color: #d97706;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-light {
+            border-width: 2px;
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-light:hover {
+            transform: translateY(-2px);
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer h5 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .footer a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: var(--secondary-color);
+        }
+
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .text-primary-custom {
+            color: var(--primary-color) !important;
+        }
+
+        .text-secondary-custom {
+            color: var(--secondary-color) !important;
+        }
+
+        .bg-light-custom {
+            background-color: var(--light-color) !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+                <i class="fas fa-bolt text-warning me-2"></i>Puihaha Electric
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                         ?>">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                         ?>">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                         ?>">Services</a>
+                    </li>
+
+                    <li class="nav-item">
+                         ?>">Contact</a>
+                    </li>
+
+                    <li class="nav-item">
+                         ?>">Register</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <?= $this->renderSection('content') ?>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <!-- Footer content here (unchanged, properly indented) -->
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+     ?>"></script>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and feature items
+        document.querySelectorAll('.card, .feature-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+
+            observer.observe(el);
+        });
+    </script>
+
+</body>
+
+</html>
